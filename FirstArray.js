@@ -12,7 +12,7 @@
 // Щоб не вибивала помилка, якщо Владік буде вводити в масиві строк число, а щоб був будь-який надпис. Якщо пустий масив, то теж надпис, але інша, якщо NaNn то ще інший надпис
 
 
-let array = [ 'VaSYlYnA iS do', 'tAnk Bober', 'ShEEse my'];
+let array = [ "CheeSe DOR", "The CAT", "Jsk"];
 showArray(array);
 
 function showArray(text) {
@@ -21,6 +21,7 @@ function showArray(text) {
   showThirdTask(array);
   showSixthTaskOne(array);
   showSixthTaskTwo(array);
+  showSeventhTaskTwo(array);
   showLastTask(array);
 }
 
@@ -31,7 +32,7 @@ function showFirstTask(text) {
 }
 
 function showSecondTask(text){
-  for(let i = 0; i <text.length; i++){
+  for(let i = 0; i < text.length; i++){
   text.sort(compareNumber);
   console.log(text[i]);
   }
@@ -53,7 +54,6 @@ function showNumber(text){
   for (let a of text){
    if (a = a)
      console.log(a);
-  
   }
 }
 
@@ -103,6 +103,42 @@ function showStringSymbolTwo(text){
   }
 }
 
+function showSeventhTaskTwo(array){
+  for(let i = 0; i < array.length; i++){
+    let countLetter = getCountLetter(array[i]);
+    let letter = getThirdLetter(array[i], countLetter);
+    let coupleLetter = showResult(array[i], letter);
+  }
+}
+
+function getCountLetter(text){
+  let countLetter = 0;
+  for (let i = 0; i < text.length; i++){
+    if (text[i] >= 'A' && text[i] <= 'Z')
+    countLetter++;
+  }
+  return countLetter;
+}
+
+function getThirdLetter(text, countLetter){
+  for (let i = 0; i < text.length; i++){
+    if(i === countLetter - 1){
+      letter = text[i];}
+    } 
+  return letter;
+}
+
+function showResult(text, letter){
+  for (let i = 0; i < text.length; i++){
+    if(i === 2) {
+      coupleLetter = text[i] + letter;}
+    else {
+      continue;
+    }
+  }
+  console.log(coupleLetter);
+}
+
 function showLastTask(text){
   for (let i = 0; i < text.length; i++){
     switch (text[i]){
@@ -125,28 +161,42 @@ function showLastTask(text){
 // 7. Вивечти символ із масиву строк за тим номером, скільки символів великого реєстру у строці. Тобто якщо 4 сиволи великого реєстру, то виводимо 4 символ строки. Приклад в скайпі.
 // + вивести третій символ строки в одному рядку із пункту 7. Якщо не має символів великих реєстрів або третього символу в строкє, то нікого не виводимо. Лише виводимо парно.
 
-let aray = ['VaSYlYnA iS do', 'TAnk Bober', 'ShEEse my'];
-showLetter(aray);
+// let array = ['VaYSlynA iS do', 'yT', 'ShEEse my'];
+// showLetter(array);
+
+// function showLetter(array){
+//   for(let i = 0; i < array.length; i++){
+//     let countLetter = getCountLetter(array[i]);
+//     let letter = getThirdLetter(array[i], countLetter);
+//     let coupleLetter = showResult(array[i], letter);
+//   }
+// }
+
+// function getCountLetter(text){
+//   let countLetter = 0;
+//   for (let i = 0; i < text.length; i++){
+//     if (text[i] >= 'A' && text[i] <= 'Z')
+//     countLetter++;
+//   }
+//   return countLetter;
+// }
+
+// function getThirdLetter(text, countLetter){
+//   for (let i = 0; i < text.length; i++){
+//     if(i === countLetter - 1)
+//       letter = text[i];
+//     }
+//   return letter;
+// }
+
+// function showResult(text, letter){
+//   for (let i = 0; i < text.length; i++){
+//     if(i === 2) {
+//       coupleLetter = text[i] + letter;}
+//     }
+//   console.log(coupleLetter);
+// }
 
 
-function showLetter(text){
-  for(let i = 0; i < text.length; i++){
-    showThirdLetter(text[i])
-  }
-}
 
-function showThirdLetter(text){
-  ;
-  for (let j = 0; j < text.length; j++ ){
-    if ( text[j] >= 'A' && text[j] <= 'Z'){
-      console.log(text[j].length);
-      
-    }
-    
-  }
-  // console.log(result);
-}
-// почитати за return 
-// потрібно знайти довжину символів великих зі строки і потім вивести той символ скільки великих літер, 
-// вказати що і == 2 і вивести переменну яка буде дорівнювати що переменна із великими строками + ця переменна.
-// створити гілки із зайвими кодами
+// почитати про створення різних файлів в файлі js, валідація
